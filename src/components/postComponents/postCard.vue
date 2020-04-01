@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div v-for="item in BlogList" :key="item.id" class="post-box">
+    <div v-for="item in BlogList" :key="item.id" class="post-box spacial">
       <el-card class="post-card">
         {{ item.title }}
         {{ item.article }}
@@ -28,6 +28,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
 </style>

@@ -1,67 +1,72 @@
 <template>
-  <el-container class="home-container">
-    <el-header>Header</el-header>
-    <el-aside width="380px">Aside</el-aside>
-    <el-main>
-      <post-card></post-card>
-    </el-main>
-    <el-footer>Footer</el-footer>
-  </el-container>
+  <div>
+    <div class="theme-bg"></div>
+    <el-container>
+      <el-header>
+        <nav-bar/>
+      </el-header>
+      <div class="post-main">
+        <el-aside class="spacial">Aside</el-aside>
+        <el-main>
+          <post-card></post-card>
+        </el-main>
+      </div>
+      <el-footer>Footer</el-footer>
+    </el-container>
+  </div>
 </template>
 <script>
-import PostCard from './subComponents/postCard'
-export default {
-  name: 'Home',
-  components: {PostCard},
+  import PostCard from './postComponents/postCard'
+  import NavBar from './headComponents/navBar'
 
-  methods: {
-    logout () {
-      this.$router.push('/login')
-    }
-  },
-  data () {
-    return {}
+  export default {
+    name: 'Home',
+    components: {NavBar, PostCard},
+
+    data () {
+      return {}
+    },
+    methods: {}
   }
-}
 </script>
 
 <style lang="less" scoped>
-.el-footer {
-  color: #333;
-  text-align: center;
-  line-height: 60px;
-  bottom: 0;
-  width: 100%;
-}
+  .theme-bg {
+    background: url("../assets/img/home-wallpaper.jpg") no-repeat  center / cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
 
-.el-header {
-  position: fixed;
-  top: 0px;
-  color: #333;
-  text-align: center;
-  line-height: 60px;
-  width: 100%;
-  z-index: 99999;
-}
+  .el-container {
+    --width: 80%;
 
-.el-aside {
-  position: sticky;
-  color: #333;
-  text-align: center;
-  line-height: 200px;
-}
+    .el-header {
+      position: fixed;
+      top: 0px;
+      width: 100%;
+    }
 
-.el-main {
-  /*background-color: transparent;*/
-  color: #333;
-  text-align: center;
-  line-height: 160px;
-  height: 100%;
-  margin-top: 30px;
-}
 
-.home-container {
-  background: url("../assets/img/home-wallpaper.jpg") no-repeat fixed;
-  background-size: cover;
-}
+    .post-main {
+      width: var(--width);
+      margin: 0 auto;
+      --subwidth: 70%;
+
+      .el-main {
+        width: var(--subwidth);
+        float: right;
+      }
+
+      .el-aside {
+        background: pink;
+        position: sticky;
+        top: 80px;
+        float: left;
+      }
+    }
+  }
 </style>

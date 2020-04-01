@@ -9,6 +9,10 @@ import {
   FormItem,
   Input,
   Button,
+  Row,
+  Col,
+  Tabs,
+  TabPane,
   Message
 } from 'element-ui'
 const element = {
@@ -23,6 +27,10 @@ const element = {
     Vue.use(FormItem)
     Vue.use(Input)
     Vue.use(Button)
+    Vue.use(Row)
+    Vue.use(Col)
+    Vue.use(Tabs)
+    Vue.use(TabPane)
     Vue.prototype.$message = Message
   }
 }

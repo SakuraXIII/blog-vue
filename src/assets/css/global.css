@@ -1,9 +1,27 @@
 /*全局样式表*/
-html,body,#app,a{
+html, body, #app, a {
   height: 100%;
   margin: 0;
   padding: 0;
   text-decoration: none !important;
 }
 
+ul, li, ol {
+  list-style: none;
+}
+
+.spacial {
+  transform-origin: center top;
+  animation: my-scale .5s ease .2s;
+  /*transition: all ;*/
+}
+
+@keyframes my-scale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 
