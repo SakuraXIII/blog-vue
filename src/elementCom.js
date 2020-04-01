@@ -8,7 +8,8 @@ import {
   Form,
   FormItem,
   Input,
-  Button
+  Button,
+  Message
 } from 'element-ui'
 const element = {
   install: function (Vue) {
@@ -22,6 +23,7 @@ const element = {
     Vue.use(FormItem)
     Vue.use(Input)
     Vue.use(Button)
+    Vue.prototype.$message = Message
   }
 }
 export default element
