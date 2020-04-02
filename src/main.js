@@ -5,7 +5,6 @@ import App from './App'
 import router from './router'
 import element from './elementCom'
 import './assets/css/global.css'
-import './assets/fonts/iconfont.css'
 Vue.use(element)
 // 设置反向代理，前端请求默认发送到 http://localhost:8443/api
 var axios = require('axios')

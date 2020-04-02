@@ -1,45 +1,62 @@
 <template>
-  <div>
+  <div class="nav-bar">
     <ul class="headTitle">
-      <li v-for="(value,index) in headField" :key="index">
-        <a :href="value.link">{{value.name}}</a>
+      <li v-for="(value, index) in headField" :key="index">
+        <a :href="value.link">{{ value.name }}</a>
       </li>
     </ul>
+    <search-box/>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'nav-bar',
-    data () {
-      return {
-        headField: [{name: 'wise酱', link: '/'}, {name: '首页', link: '/'}, {name: '折腾', link: '#'}]
-      }
-    },
-    methods: {}
+import SearchBox from './searchBox'
+export default {
+  name: 'nav-bar',
+  components: {SearchBox},
+  data () {
+    return {
+      headField: [
+        {name: 'wise酱\'s blog', link: '/'},
+        {name: '首页', link: '/'},
+        {name: '折腾', link: '#'}
+      ]
+    }
+  },
+  methods: {
+
   }
+}
 </script>
 
 <style lang="less" scoped>
-  .headTitle {
-    width: var(--width);
+  .nav-bar {
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
+    align-items: center;
+    width: var(--width);
     margin: 0 auto;
-    padding: 0;
 
-    li {
-      color: white;
-      line-height: 60px;
-      float: left;
+    .headTitle {
+      padding: 0;
+      margin: 0;
 
-      a {
-        color: #ffeb3b;
+      li {
+        color: white;
+        float: left;
 
-        &:hover {
-          color: #c4ba5d;
+        a {
+          color: #ffeb3b;
+          display: block;
+          padding: 20px;
+
+          &:hover {
+            color: #c4ba5d;
+          }
         }
       }
     }
+
+
   }
 </style>

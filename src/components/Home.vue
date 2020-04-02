@@ -47,6 +47,8 @@
     .el-header {
       position: fixed;
       top: 0px;
+      z-index: 100;
+      background-color: rgba(50, 47, 59, 0.93);
       width: 100%;
     }
 
@@ -64,7 +66,7 @@
       .el-aside {
         background: pink;
         position: sticky;
-        top: 80px;
+        top: 5vh;
         float: left;
       }
     }
