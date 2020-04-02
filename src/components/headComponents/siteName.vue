@@ -1,6 +1,7 @@
 <template>
-  <div>
-
+  <div class="site-name">
+    <h1>ヽ(≧∀≦)ﾉ</h1>
+    <p>一个基于vue构建的个人博客</p>
   </div>
 </template>
 
@@ -8,16 +9,19 @@
 export default {
   name: 'site-name',
   data () {
-    return {
-
-    }
+    return {}
   },
-  methods: {
-
-  }
+  methods: {}
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+  .site-name {
+    margin: 10vh 0 5vh 0;
+    text-align: center;
 
+    & > h1, p {
+      color: var(--fontColor);
+    }
+  }
 </style>

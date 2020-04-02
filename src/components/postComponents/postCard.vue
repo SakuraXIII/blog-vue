@@ -17,12 +17,21 @@ export default {
   },
   props: ['postlist'],
 
-  methods: {
-
-  }
+  methods: {}
 }
 </script>
 
 <style lang="less" scoped>
+  .post-card {
+    border-radius: var(--borRadius);
+    background-color: var(--darkbgColor);
+    border: 1px solid var(--darkbgColor);
 
+    &:not(.dark) {
+      background-color: var(--ligthbgColor);
+      /*background-color: #fff;*/
+      border: 1px solid var(--ligthbgColor);
+    }
+
+  }
 </style>

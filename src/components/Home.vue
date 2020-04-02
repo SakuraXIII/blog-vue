@@ -2,9 +2,13 @@
   <div>
     <div class="theme-bg"></div>
     <el-container>
-      <el-header>
-        <nav-bar/>
-      </el-header>
+      <div class="blog-header">
+        <el-header>
+          <nav-bar/>
+        </el-header>
+        <div class="null"></div>
+        <site-name/>
+      </div>
       <div class="post-main">
         <el-aside class="spacial">Aside</el-aside>
         <el-main>
@@ -18,10 +22,11 @@
 <script>
 import PostCard from './postComponents/postCard'
 import NavBar from './headComponents/navBar'
+import SiteName from './headComponents/siteName'
 
 export default {
   name: 'Home',
-  components: {NavBar, PostCard},
+  components: {SiteName, NavBar, PostCard},
 
   data () {
     return {
@@ -55,31 +60,41 @@ export default {
 
   .el-container {
     --width: 80vw;
-
-    .el-header {
-      position: fixed;
-      top: 0;
-      z-index: 100;
-      background-color: rgba(50, 47, 59, 0.93);
-      width: 100%;
+    /*头部*/
+    .blog-header {
+      .el-header {
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        background-color: rgba(50, 47, 59, 0.93);
+        width: 100%;
+      }
+      .null {
+        width: 100%;
+        padding-top: 60px;
+      }
+      --fontColor: #ffffff;
     }
-
+    /*中间文章部分*/
     .post-main {
       width: var(--width);
       margin: 0 auto;
       --subwidth: 70%;
-      margin-top: 70px;
-
+      --borRadius: 5px;
+      --darkbgColor: #353535;
+      --ligthbgColor: #ffffff;
       .el-main {
         width: var(--subwidth);
         float: right;
       }
-
+      /*侧边栏部分*/
       .el-aside {
         background: pink;
         position: sticky;
-        top: 5vh;
+        top: 20vh;
         float: left;
+        margin: 20px;
+        border-radius: var(--borRadius) ;
       }
     }
   }

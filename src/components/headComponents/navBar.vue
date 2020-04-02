@@ -37,19 +37,13 @@ export default {
     --fontColor: #fff;
     margin: 0 auto;
 
-    &::after {
-      content: "";
-      display: block;
-      clear: both;
-    }
-
     .headTitle {
       padding: 0;
       margin: 0;
 
       li {
         float: left;
-
+        margin-right: 5px;
         a {
           color: var(--fontColor);
           display: block;
