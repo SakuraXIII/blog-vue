@@ -11,6 +11,7 @@
 
 <script>
 import SearchBox from './searchBox'
+
 export default {
   name: 'nav-bar',
   components: {SearchBox},
@@ -23,9 +24,7 @@ export default {
       ]
     }
   },
-  methods: {
-
-  }
+  methods: {}
 }
 </script>
 
@@ -35,32 +34,33 @@ export default {
     justify-content: space-between;
     align-items: center;
     width: var(--width);
+    --fontColor: #fff;
     margin: 0 auto;
+
     &::after {
       content: "";
       display: block;
       clear: both;
     }
+
     .headTitle {
       padding: 0;
       margin: 0;
 
       li {
-        color: white;
         float: left;
 
         a {
-          color: #ffeb3b;
+          color: var(--fontColor);
           display: block;
           padding: 20px;
 
           &:hover {
-            color: #c4ba5d;
+            color: #ccc;
           }
         }
       }
     }
-
 
   }
 </style>

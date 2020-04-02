@@ -1,9 +1,9 @@
 <template>
   <main>
-    <div v-for="item in BlogList" :key="item.id" class="post-box spacial">
+    <div v-for="item in postlist" :key="item.id" class="post-box spacial">
       <el-card class="post-card">
-        {{ item.title }}
-        {{ item.article }}
+        <h1>{{ item.title }}</h1>
+        {{ item.article ? item.article.slice(0,30) : '' }}
       </el-card>
     </div>
   </main>
@@ -13,17 +13,12 @@
 export default {
   name: 'post-card',
   data () {
-    return {BlogList: {}}
+    return {}
   },
-  created () {
-    this.getBlogList()
-  },
+  props: ['postlist'],
+
   methods: {
-    async getBlogList () {
-      const {data: res} = await this.$axios.get('loadBlog')
-      console.log(res.data)
-      this.BlogList = res.data
-    }
+
   }
 }
 </script>

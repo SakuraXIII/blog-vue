@@ -8,7 +8,7 @@
       <div class="post-main">
         <el-aside class="spacial">Aside</el-aside>
         <el-main>
-          <post-card></post-card>
+          <post-card :postlist="post"></post-card>
         </el-main>
       </div>
       <el-footer>Footer</el-footer>
@@ -16,18 +16,30 @@
   </div>
 </template>
 <script>
-  import PostCard from './postComponents/postCard'
-  import NavBar from './headComponents/navBar'
+import PostCard from './postComponents/postCard'
+import NavBar from './headComponents/navBar'
 
-  export default {
-    name: 'Home',
-    components: {NavBar, PostCard},
+export default {
+  name: 'Home',
+  components: {NavBar, PostCard},
 
-    data () {
-      return {}
-    },
-    methods: {}
+  data () {
+    return {
+      post: '正在加载中'
+    }
+  },
+  created () {
+    this.getBlogList()
+  },
+  methods: {
+    async getBlogList () {
+      let {data: res} = await this.$axios.post('loadBlog', {id: '1'})
+      res = res.data
+      console.log(res)
+      this.post = res.blogs
+    }
   }
+}
 </script>
 
 <style lang="less" scoped>
@@ -52,12 +64,12 @@
       width: 100%;
     }
 
-
     .post-main {
       width: var(--width);
       margin: 0 auto;
       --subwidth: 70%;
       margin-top: 70px;
+
       .el-main {
         width: var(--subwidth);
         float: right;

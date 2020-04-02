@@ -1,6 +1,6 @@
 <template>
   <div class="search-box">
-    <i class="iconfont icon-sousuo" @click="searchInput"></i>
+    <i class="iconfont icon-sousuo" :class="{ 'visiable': isopen }" @click="searchInput"></i>
     <input
       type="text"
       placeholder="要搜索点啥..."
@@ -13,26 +13,27 @@
 </template>
 
 <script>
-  export default {
-    name: 'search-box',
-    data () {
-      return {isopen: false}
+export default {
+  name: 'search-box',
+  data () {
+    return {isopen: false}
+  },
+  methods: {
+    searchInput: function (e) {
+      this.isopen = true
+      this.$refs.input.focus()
     },
-    methods: {
-      searchInput: function (e) {
-        this.isopen = true
-        this.$refs.input.focus()
-      },
-      onblur: function () {
-        this.isopen = false
-      }
+    onblur: function () {
+      this.isopen = false
     }
   }
+}
 </script>
 
 <style lang="less" scoped>
   .search-box {
     float: right;
+    margin-left: auto;
 
     i {
       font-size: 20px;
@@ -40,7 +41,11 @@
       display: inline-block;
       vertical-align: middle;
       padding: 10px;
-      color: #ffeb3b;
+      color: var(--fontColor);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0, 1);;
+      &.visiable {
+        opacity: 0;
+      }
     }
 
     input:not(.open) {
