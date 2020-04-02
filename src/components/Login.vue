@@ -62,7 +62,6 @@ export default {
       this.$refs.loginFormRef.resetFields()
     },
     login: function () { // valid是验证的结果,形参,一个bool值
-      console.log(this)
       this.$refs.loginFormRef.validate(async (valid) => {
         if (!valid) return
         const {data: res} = await this.$axios.post('login', this.loginForm)

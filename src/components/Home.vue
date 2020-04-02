@@ -42,7 +42,7 @@
   }
 
   .el-container {
-    --width: 80%;
+    --width: 80vw;
 
     .el-header {
       position: fixed;
