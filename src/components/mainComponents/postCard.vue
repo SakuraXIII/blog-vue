@@ -1,7 +1,7 @@
 <template>
   <main>
     <div v-for="item in postlist" :key="item.id" class="post-box spacial">
-      <el-card class="post-card">
+      <el-card class="post-card" :class="icon ? 'light' : 'dark'">
         <h1>{{ item.title }}</h1>
         {{ item.article ? item.article.slice(0,30) : '' }}
       </el-card>
@@ -15,7 +15,7 @@ export default {
   data () {
     return {}
   },
-  props: ['postlist'],
+  props: ['postlist', 'icon'],
 
   methods: {}
 }
@@ -24,14 +24,7 @@ export default {
 <style lang="less" scoped>
   .post-card {
     border-radius: var(--borRadius);
-    background-color: var(--darkbgColor);
-    border: 1px solid var(--darkbgColor);
-
-    &:not(.dark) {
-      background-color: var(--ligthbgColor);
-      /*background-color: #fff;*/
-      border: 1px solid var(--ligthbgColor);
-    }
+    transition: all .5s ease-out;
 
   }
 </style>

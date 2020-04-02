@@ -44,6 +44,7 @@ export default {
       li {
         float: left;
         margin-right: 5px;
+
         a {
           color: var(--fontColor);
           display: block;

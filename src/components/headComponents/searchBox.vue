@@ -1,6 +1,6 @@
 <template>
   <div class="search-box">
-    <i class="iconfont icon-sousuo" :class="{ 'visiable': isopen }" @click="searchInput"></i>
+    <i class="el-icon-search" :class="{ 'visiable': isopen }" @click="searchInput"></i>
     <input
       type="text"
       placeholder="要搜索点啥..."

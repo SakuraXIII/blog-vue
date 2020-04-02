@@ -13,6 +13,9 @@ import {
   Col,
   Tabs,
   TabPane,
+  Backtop,
+  Icon,
+  Tooltip,
   Message
 } from 'element-ui'
 const element = {
@@ -28,9 +31,12 @@ const element = {
     Vue.use(Input)
     Vue.use(Button)
     Vue.use(Row)
+    Vue.use(Backtop)
     Vue.use(Col)
     Vue.use(Tabs)
     Vue.use(TabPane)
+    Vue.use(Icon)
+    Vue.use(Tooltip)
     Vue.prototype.$message = Message
   }
 }

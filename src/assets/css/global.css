@@ -25,3 +25,16 @@ ul, li, ol {
   }
 }
 
+.dark,.dark:hover,.dark:focus {
+  --darkbgColor: #353535;
+  color: #a19d9d;
+  border: 1px solid var(--darkbgColor);
+  background-color: var(--darkbgColor);
+}
+
+.light,.light:hover,.light:focus  {
+  --ligthbgColor: #ffffff;
+  color: #666;
+  border: 1px solid var(--ligthbgColor);
+  background-color: var(--ligthbgColor);
+}
