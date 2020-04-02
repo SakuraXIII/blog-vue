@@ -46,7 +46,7 @@
 
     .el-header {
       position: fixed;
-      top: 0px;
+      top: 0;
       z-index: 100;
       background-color: rgba(50, 47, 59, 0.93);
       width: 100%;
@@ -57,7 +57,7 @@
       width: var(--width);
       margin: 0 auto;
       --subwidth: 70%;
-
+      margin-top: 70px;
       .el-main {
         width: var(--subwidth);
         float: right;

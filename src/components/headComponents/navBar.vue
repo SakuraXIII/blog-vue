@@ -36,7 +36,11 @@ export default {
     align-items: center;
     width: var(--width);
     margin: 0 auto;
-
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
     .headTitle {
       padding: 0;
       margin: 0;
