@@ -29,12 +29,15 @@ export default {
       this.$router.push('/login')
     },
     async getBlogList () {
-      const {data: res} = await this.$axios.get('loadBlog')
-      this.BlogList = res.data
+      const {data: res} = await this.$axios.post('loadsidebar', this.user)
+      this.BlogList = res.data.blogs
     }
   },
   data () {
     return {
+      user: {
+        id: '1'
+      },
       BlogList: {
       }
     }

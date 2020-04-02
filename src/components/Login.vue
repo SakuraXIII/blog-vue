@@ -59,8 +59,24 @@ export default {
         if (!valid) return
         const {data: res} = await this.$axios.post('login', this.loginForm)
         console.log(res)
-        if (res.code !== 200) return this.$message.error('登录失败')
-        this.$message.success('登陆成功')
+        if (res.code !== 200) {
+          return this.$message({
+            message: '登陆失败',
+            type: 'error',
+            duration: 1500,
+            showClose: true,
+            center: true,
+            offset: 50
+          })
+        }
+        this.$message({
+          message: '登陆成功',
+          type: 'success',
+          duration: 1500,
+          showClose: true,
+          center: true,
+          offset: 50
+        })
         this.$router.push('/home')
       })
     }
