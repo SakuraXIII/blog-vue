@@ -30,6 +30,8 @@ ul, li, ol {
   color: #a19d9d;
   border: 1px solid var(--darkbgColor);
   background-color: var(--darkbgColor);
+  transition: all .5s ease-out;
+
 }
 
 .light,.light:hover,.light:focus  {
@@ -37,4 +39,6 @@ ul, li, ol {
   color: #666;
   border: 1px solid var(--ligthbgColor);
   background-color: var(--ligthbgColor);
+  transition: all .5s ease-out;
+
 }

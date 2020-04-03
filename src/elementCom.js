@@ -9,13 +9,11 @@ import {
   FormItem,
   Input,
   Button,
-  Row,
-  Col,
-  Tabs,
-  TabPane,
   Backtop,
   Icon,
   Tooltip,
+  Drawer,
+  Avatar,
   Message
 } from 'element-ui'
 const element = {
@@ -30,13 +28,11 @@ const element = {
     Vue.use(FormItem)
     Vue.use(Input)
     Vue.use(Button)
-    Vue.use(Row)
     Vue.use(Backtop)
-    Vue.use(Col)
-    Vue.use(Tabs)
-    Vue.use(TabPane)
     Vue.use(Icon)
     Vue.use(Tooltip)
+    Vue.use(Drawer)
+    Vue.use(Avatar)
     Vue.prototype.$message = Message
   }
 }
