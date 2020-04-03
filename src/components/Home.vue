@@ -80,6 +80,7 @@ export default {
     /*头部*/
 
     .blog-header {
+      --fontColor: #ffffff; //作为页头文字统一颜色
       .el-header {
         position: fixed;
         top: 0;
@@ -94,7 +95,7 @@ export default {
       }
     }
 
-    --borRadius: 0px;
+    --borRadius: 0px; //作为页面卡片统一圆角
 
     /*中间文章部分*/
 
@@ -112,7 +113,7 @@ export default {
         position: sticky;
         top: 20vh;
         float: left;
-        margin: 20px;
+        margin: 0 5vw;
         border-radius: var(--borRadius);
       }
     }

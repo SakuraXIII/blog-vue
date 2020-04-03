@@ -34,7 +34,6 @@ export default {
     justify-content: space-between;
     align-items: center;
     width: var(--width);
-    --fontColor: #fff;
     margin: 0 auto;
 
     .headTitle {
@@ -48,7 +47,7 @@ export default {
         a {
           color: var(--fontColor);
           display: block;
-          padding: 20px;
+          padding: 20px 15px;
 
           &:hover {
             color: #ccc;

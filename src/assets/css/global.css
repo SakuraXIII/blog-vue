@@ -1,9 +1,13 @@
 /*全局样式表*/
-html, body, #app, a {
+html, body, #app {
   height: 100%;
   margin: 0;
   padding: 0;
-  text-decoration: none !important;
+}
+
+a {
+
+  text-decoration: none;
 }
 
 ul, li, ol {
