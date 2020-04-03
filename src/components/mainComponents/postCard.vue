@@ -7,7 +7,7 @@
           :title="item.title"
           :date="item.date"
           :id="item.id"
-          :wordNum="item.article.length"
+          :wordNum="item.article ? item.article.length : ''"
           :read-time="item.time"
           :tags="'折腾'"
         />

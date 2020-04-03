@@ -1,33 +1,36 @@
 <template>
   <div>
     <div class="theme-bg"></div>
-    <el-container direction="vertical" :style="!this.isMobile ? '--width: 80vw': '--width: 95vw'">
+    <el-container direction="vertical">
       <div class="blog-header">
-        <div v-if="!this.isMobile">
+        <div class="pc-navbar">
           <el-header>
             <nav-bar/>
           </el-header>
           <div class="null"></div>
         </div>
-        <div class="mobile-drawer" v-else>
+        <!--小屏幕适配-->
+        <div class="mobile-drawer">
           <mobile-drawer :icon="icon"/>
         </div>
         <site-name/>
       </div>
       <div class="post-main">
-        <div v-if="!this.isMobile">
-          <el-aside class="spacial" :class="icon ? 'light' : 'dark'">
-            aside
-            <!--          <blog-info/>-->
-            <!--          <my-info/>-->
-          </el-aside>
-        </div>
+        <!--侧边栏-->
+        <el-aside class="spacial" :class="icon ? 'light' : 'dark'">
+          aside
+          <!--          <blog-info/>-->
+          <!--          <my-info/>-->
+        </el-aside>
+        <!--文章列表-->
         <div class="post-list">
           <post-card :postlist="post" :icon="icon"></post-card>
         </div>
       </div>
+      <!--页脚-->
       <my-footer/>
-      <tools @toogle="icon = !icon" :icon="icon" />
+      <!--侧边栏小工具-->
+      <tools @toogle="icon = !icon" :icon="icon"/>
     </el-container>
   </div>
 </template>
@@ -74,6 +77,40 @@ export default {
     right: 0;
     bottom: 0;
     z-index: -1;
+  }
+
+  // 超小屏幕xs 手机 (<768px) 小屏幕sm 平板(≥768px) 中等屏幕md  桌面(≥992px) 大屏幕lg  桌面(≥1200px)
+  /*PC端*/
+  @media screen and (min-width: 992px) {
+    .mobile-drawer {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .el-container {
+      --width: 95vw;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .el-container {
+      --width: 80vw;
+    }
+  }
+
+  /*移动端*/
+  @media screen and (max-width: 992px) {
+    .el-container {
+
+      .pc-navbar {
+        display: none;
+      }
+
+      .el-aside {
+        display: none;
+      }
+    }
   }
 
   .el-container {
