@@ -148,7 +148,7 @@ export default {
 
       .el-aside {
         position: sticky;
-        top: 20vh;
+        top: 15vh;
         float: left;
         margin: 0 5vw;
         border-radius: var(--borRadius);

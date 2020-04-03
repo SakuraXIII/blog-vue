@@ -42,7 +42,7 @@ export default {
     .post-card {
       padding: 1vw;
       .text {
-        margin-top: 5vh;
+        margin-top: 1vw;
         text-indent: 2em;
       }
     }

@@ -22,30 +22,36 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.post-header {
-  text-align: center;
-  a.title {
-    font-size: 20px;
-    border: none;
-    background-color: unset;
-    display: inline-block;
-    margin: 5px 0;
-    &:hover {
-      transform: scale(1.05);
-      color: #777777;
+  .post-header {
+    text-align: center;
+
+    a.title {
+      font-size: 20px;
+      border: none;
+      background-color: unset;
+      display: inline-block;
+      margin: 5px 0;
+
+      &:hover {
+        transform: scale(1.05);
+        color: #777777;
+      }
     }
-  }
-  .sub-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    p {
-      margin: 0;
-      font-size: 12px;
-      i {
-        margin: 0 5px;
+
+    .sub-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      p {
+        margin: 0;
+        font-size: 12px;
+
+        i {
+          margin-right: 3px;
+        }
       }
     }
   }
-}
 </style>

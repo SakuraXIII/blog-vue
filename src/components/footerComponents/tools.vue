@@ -1,14 +1,27 @@
 <template>
   <div class="my-tool">
-    <el-backtop :visibility-height="0" :bottom="200" :class="[icon ? 'light' : 'dark']"></el-backtop>
+    <el-backtop :visibility-height="0" :bottom="200" :class="[icon ? 'light' : 'dark']">
+      <el-tooltip class="item" :effect="icon ? 'light' : 'dark'" content="回到顶部" placement="left">
+        <el-button :circle="true" class="el-button" :class="icon ? 'light' : 'dark'">
+          <i class="el-icon-caret-top"></i>
+        </el-button>
+      </el-tooltip>
+    </el-backtop>
     <el-backtop :visibility-height="0" :bottom="150">
+      <el-tooltip class="item" :effect="icon ? 'light' : 'dark'" content="设置主题" placement="left">
+        <el-button :circle="true" class="el-button" :class="icon ? 'light' : 'dark'" @click.stop>
+          <tool-setting :icon="icon" />
+        </el-button>
+      </el-tooltip>
+    </el-backtop>
+    <el-backtop :visibility-height="0" :bottom="100">
       <el-tooltip class="item" :effect="icon ? 'light' : 'dark'" content="切换模式" placement="left">
         <el-button :circle="true" class="el-button" :class="icon ? 'light' : 'dark'" @click.stop="$emit('toogle')">
           <i :class="icon ? 'el-icon-moon' : 'el-icon-sunny'"></i>
         </el-button>
       </el-tooltip>
     </el-backtop>
-    <el-backtop :visibility-height="0" :bottom="100" :class="[icon ? 'light' : 'dark']">
+    <el-backtop :visibility-height="0" :bottom="50" :class="[icon ? 'light' : 'dark']">
       <el-tooltip class="item" :effect="icon ? 'light' : 'dark'" content="阅读进度" placement="left">
         <div class="preventdefault" @click.stop>
           <span class="process">{{readProcess}}</span>
@@ -19,8 +32,11 @@
 </template>
 
 <script>
+import ToolSetting from './toolSetting'
+
 export default {
   name: 'tools',
+  components: {ToolSetting},
   props: ['icon'],
   data () {
     return {

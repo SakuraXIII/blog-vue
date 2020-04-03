@@ -14,6 +14,7 @@ import {
   Tooltip,
   Drawer,
   Avatar,
+  Popover,
   Message
 } from 'element-ui'
 const element = {
@@ -33,6 +34,7 @@ const element = {
     Vue.use(Tooltip)
     Vue.use(Drawer)
     Vue.use(Avatar)
+    Vue.use(Popover)
     Vue.prototype.$message = Message
   }
 }
