@@ -8,9 +8,9 @@
       </el-tooltip>
     </el-backtop>
     <el-backtop :visibility-height="0" :bottom="150">
-      <el-tooltip class="item" :effect="icon ? 'light' : 'dark'" content="设置主题" placement="left">
+      <el-tooltip class="item" :disabled="disabled" :effect="icon ? 'light' : 'dark'" content="设置主题" placement="left">
         <el-button :circle="true" class="el-button" :class="icon ? 'light' : 'dark'" @click.stop>
-          <tool-setting :icon="icon" />
+          <tool-setting :icon="icon" @disabled="disabled = !disabled" />
         </el-button>
       </el-tooltip>
     </el-backtop>
@@ -40,7 +40,8 @@ export default {
   props: ['icon'],
   data () {
     return {
-      readProcess: '0%'
+      readProcess: '0%',
+      disabled: false
     }
   },
   created () {
