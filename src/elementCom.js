@@ -15,6 +15,7 @@ import {
   Drawer,
   Avatar,
   Popover,
+  Slider,
   Message
 } from 'element-ui'
 const element = {
@@ -35,6 +36,7 @@ const element = {
     Vue.use(Drawer)
     Vue.use(Avatar)
     Vue.use(Popover)
+    Vue.use(Slider)
     Vue.prototype.$message = Message
   }
 }

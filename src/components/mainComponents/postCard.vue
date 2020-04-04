@@ -39,13 +39,15 @@ export default {
 <style lang="less" scoped>
   .post-box {
     margin-bottom: 2vw;
-    border-radius: var(--borRadius);
 
     .post-card {
       padding: 30px;
+      border-radius: var(--borRadius);
+
       .loading {
         text-align: center;
       }
+
       .text {
         margin-top: 1vw;
         text-indent: 2em;

@@ -30,6 +30,9 @@ if (today === '4月4日') {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  data: {
+    borRadius: '30px'
+  },
   router,
   components: {App},
   template: '<App/>'

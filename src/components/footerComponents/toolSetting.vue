@@ -4,16 +4,18 @@
     placement="left"
     offset="15"
     trigger="click"
-    :popper-class="icon ? '' : 'dark'"
-    content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
+    :popper-class="icon ? '' : 'dark'">
+    <theme-setting/>
     <i slot="reference" class="el-icon-setting"></i>
   </el-popover>
   </div>
 </template>
 
 <script>
+import ThemeSetting from './themeSetting'
 export default {
   name: 'tool-setting',
+  components: {ThemeSetting},
   props: ['icon'],
   data () {
     return {}

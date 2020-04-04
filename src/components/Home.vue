@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="theme-bg"></div>
-    <el-container direction="vertical">
+    <el-container direction="vertical" :style="{'--borRadius':this.$root.borRadius}">
       <div class="blog-header">
         <div class="pc-navbar">
           <el-header>
