@@ -1,18 +1,19 @@
 <template>
   <div>
-  <el-popover
-    placement="left"
-    offset="15"
-    trigger="click"
-    :popper-class="icon ? '' : 'dark'">
-    <theme-setting/>
-    <i slot="reference" class="el-icon-setting"></i>
-  </el-popover>
+    <el-popover
+      placement="left"
+      offset="15"
+      trigger="click"
+      :popper-class="icon ? '' : 'dark'">
+      <theme-setting/>
+      <i slot="reference" class="el-icon-setting"></i>
+    </el-popover>
   </div>
 </template>
 
 <script>
 import ThemeSetting from './themeSetting'
+
 export default {
   name: 'tool-setting',
   components: {ThemeSetting},
@@ -39,15 +40,20 @@ export default {
 
   .el-popper {
     transform: translateX(2%);
-    z-index: 3000 !important;
+    z-index: 2200 !important;
 
     & > div.popper__arrow {
       display: none;
     }
   }
+
   i.el-popover__reference {
     padding: 13px;
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .el-tooltip__popper {
+    z-index: 2000 !important;
   }
 </style>

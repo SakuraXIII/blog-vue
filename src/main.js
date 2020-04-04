@@ -1,5 +1,13 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+/**
+ * 作者：Sakura
+ * 时间：20/04/04 22:02
+ * 描述： 基于Vue + Element UI 构建的个人博客
+ * 对于页面中CSS样式多处使用 !important 或 <style> 标签未加scoped实属无奈之举，
+ * 都是框架的锅，不这样做，一些自定义样式无法生效
+ **/
+
 import Vue from 'vue'
 import App from './App'
 import router from './router'
