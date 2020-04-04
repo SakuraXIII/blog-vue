@@ -31,7 +31,7 @@ if (today === '4月4日') {
 new Vue({
   el: '#app',
   data: {
-    borRadius: '30px'
+    borRadius: ''
   },
   router,
   components: {App},
