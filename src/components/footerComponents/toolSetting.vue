@@ -1,4 +1,5 @@
 <template>
+  <div>
   <el-popover
     placement="left"
     offset="15"
@@ -9,6 +10,7 @@
     content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
     <i slot="reference" class="el-icon-setting"></i>
   </el-popover>
+  </div>
 </template>
 
 <script>
@@ -23,7 +25,9 @@ export default {
       this.$emit('disabled')
     },
     popperHidden: function () {
-      this.$emit('disabled')
+      setTimeout(() => {
+        this.$emit('disabled')
+      }, 1000)
     }
   }
 }
@@ -49,5 +53,10 @@ export default {
     & > div.popper__arrow {
       display: none;
     }
+  }
+  i.el-popover__reference {
+    padding: 13px;
+    position: absolute;
+    transform: translate(-50%,-50%);
   }
 </style>

@@ -34,7 +34,7 @@ export default {
 
       &:hover {
         transform: scale(1.05);
-        color: #777777;
+        color: #474646;
       }
     }
 
@@ -47,9 +47,9 @@ export default {
       p {
         margin: 0;
         font-size: 12px;
-
+        margin-right: 3px;
         i {
-          margin-right: 3px;
+          margin-right: 1px;
         }
       }
     }
