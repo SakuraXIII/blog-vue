@@ -12,7 +12,7 @@
           :tags="'折腾'"
           v-if="postlist !== '正在加载中'"
         />
-        <p v-else class="loading">(。・∀・)ノ)数据好像还没收到，刷新下吧 <i class="el-icon-loading"></i></p>
+        <p v-else class="loading">(。・∀・)ノ)数据好像还没收到，等一下吧 <i class="el-icon-loading"></i></p>
         <div class="text">
           {{ item.article ? item.article.slice(0,200) + '...' : '' }}
         </div>

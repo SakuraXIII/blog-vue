@@ -17,6 +17,16 @@ Vue.prototype.isMobile = false
 if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
   Vue.prototype.isMobile = true
 }
+
+const d = new Date()
+let month = d.getMonth() + 1
+let date = d.getDate()
+let today = `${month}月${date}日`
+if (today === '4月4日') {
+  // 如果是清明，全站灰度化
+  document.querySelector('html').style.filter = 'grayscale(1)'
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
