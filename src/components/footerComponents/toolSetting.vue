@@ -5,8 +5,6 @@
     offset="15"
     trigger="click"
     :popper-class="icon ? '' : 'dark'"
-    @show="popperShow"
-    @hide="popperHidden"
     content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
     <i slot="reference" class="el-icon-setting"></i>
   </el-popover>
@@ -20,16 +18,7 @@ export default {
   data () {
     return {}
   },
-  methods: {
-    popperShow: function () {
-      this.$emit('disabled')
-    },
-    popperHidden: function () {
-      setTimeout(() => {
-        this.$emit('disabled')
-      }, 1000)
-    }
-  }
+  methods: {}
 }
 </script>
 
@@ -47,7 +36,7 @@ export default {
   }
 
   .el-popper {
-    transform: translateX(-5%);
+    transform: translateX(2%);
     z-index: 3000 !important;
 
     & > div.popper__arrow {
