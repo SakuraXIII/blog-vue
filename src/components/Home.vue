@@ -30,17 +30,17 @@
       <!--页脚-->
       <my-footer/>
       <!--侧边栏小工具-->
-      <tools @toogle="icon = !icon" :icon="icon"/>
+      <tools @toggle="icon = !icon" :icon="icon"/>
     </el-container>
   </div>
 </template>
 <script>
-import PostCard from './mainComponents/postCard'
-import NavBar from './headComponents/navBar'
+import PostCard from './mainComponents/postComponents/postCard'
+import NavBar from './headComponents/navBarComponents/navBar'
 import SiteName from './headComponents/siteName'
-import BlogInfo from './mainComponents/asideBlogInfo'
-import MyInfo from './mainComponents/asideMyInfo'
-import MobileDrawer from './headComponents/mobileDrawer'
+import BlogInfo from './mainComponents/AsideComponents/asideBlogInfo'
+import MyInfo from './mainComponents/AsideComponents/asideMyInfo'
+import MobileDrawer from './headComponents/navBarComponents/mobileDrawer'
 import MyFooter from './footerComponents/footer'
 import Tools from './footerComponents/tools'
 

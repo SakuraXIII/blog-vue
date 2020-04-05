@@ -9,7 +9,7 @@ export default {
   name: 'mobile-menu',
   data () {
     return {
-      avatarUrl: require('../../assets/img/logo.png')
+      avatarUrl: require('../../../assets/img/logo.png')
     }
   },
   methods: {

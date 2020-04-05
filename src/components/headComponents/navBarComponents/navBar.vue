@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import SearchBox from './searchBox'
+import SearchBox from '../searchBox'
 
 export default {
   name: 'nav-bar',

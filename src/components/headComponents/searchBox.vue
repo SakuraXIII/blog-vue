@@ -7,7 +7,9 @@
       autocomplete="off"
       :class="{ open: isopen }"
       ref="input"
+      v-model="key"
       @blur="onblur"
+      @keyup.enter="searchKey"
     />
   </div>
 </template>
@@ -16,7 +18,7 @@
 export default {
   name: 'search-box',
   data () {
-    return {isopen: false}
+    return {isopen: false, key: ''}
   },
   methods: {
     searchInput: function (e) {
@@ -25,6 +27,14 @@ export default {
     },
     onblur: function () {
       this.isopen = false
+      this.key = ''
+    },
+    searchKey: function () {
+      this.key = this.key.trim()
+      if (this.key !== '') {
+        // TODO 搜索功能
+        console.log(this.key)
+      }
     }
   }
 }

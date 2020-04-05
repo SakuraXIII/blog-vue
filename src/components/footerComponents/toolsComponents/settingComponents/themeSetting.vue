@@ -13,7 +13,7 @@ export default {
   name: 'theme-setting',
   data () {
     return {
-      value: 20,
+      value: 0,
       tooltip: false
     }
   },
