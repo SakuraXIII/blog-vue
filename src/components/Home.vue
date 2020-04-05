@@ -27,10 +27,12 @@
           <post-card :postlist="post" :icon="icon"></post-card>
         </div>
       </div>
-      <!--页脚-->
-      <my-footer/>
-      <!--侧边栏小工具-->
-      <tools @toggle="icon = !icon" :icon="icon"/>
+      <div class="blog-footer">
+        <!--页脚-->
+        <my-footer/>
+        <!--侧边栏小工具-->
+        <tools @toggle="icon = !icon" :icon="icon"/>
+      </div>
     </el-container>
   </div>
 </template>

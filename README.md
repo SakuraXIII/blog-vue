@@ -2,6 +2,9 @@
 
 > My Blog
 
+![](BLOG-VUE.png)
+
+
 ## Build Setup
 
 ``` bash

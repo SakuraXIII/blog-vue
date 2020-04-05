@@ -3,7 +3,13 @@
     <p>主题调整功能还未正式上线哦</p>
     <div class="block">
       <span class="demonstration">圆角</span>
-      <el-slider v-model="value" :min="0" :max="30" tooltip-class="borderTip" :show-tooltip="tooltip" @input="borderAdjust" @change="closeTip"></el-slider>
+      <el-slider
+        v-model="value"
+        :min="0" :max="30"
+        tooltip-class="borderTip"
+        :show-tooltip="tooltip"
+        @input="borderAdjust"
+        @change="closeTip"></el-slider>
     </div>
   </div>
 </template>
