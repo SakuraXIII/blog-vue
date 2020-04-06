@@ -54,7 +54,7 @@ export default {
   }
   a {
     border: none;
-    color: steelblue;
+    color: #700fc6;
     background-color: transparent;
   }
 }

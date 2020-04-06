@@ -38,7 +38,7 @@ ul, li, ol {
 
 .light,.light:hover,.light:focus  {
   --ligthbgColor: #ffffff;
-  color: #ffffff;
+  color: #ccc;
   /*border: 1px solid var(--ligthbgColor);*/
   /*background-color: var(--ligthbgColor);*/
   border: 1px solid rgb(var(--defaultColor));

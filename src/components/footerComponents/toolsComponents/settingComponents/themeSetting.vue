@@ -16,6 +16,7 @@
       <el-color-picker
         popper-class="colorPicker"
         color-format="rgb"
+        :predefine="predefines"
         @active-change="colorChange"
         v-model="color"></el-color-picker>
     </div>
@@ -29,7 +30,8 @@ export default {
     return {
       value: 0,
       tooltip: false,
-      color: 'rgb(50, 47, 59)'
+      color: 'rgb(31, 142, 150)',
+      predefines: ['rgb(255, 120, 0)', 'rgb(50, 47, 59)', 'rgb(31, 142, 150)']
     }
   },
   created () {

@@ -1,7 +1,6 @@
 <template>
   <div class="post-header">
     <a :href="'/article/'+id" class="title" :class="icon ? 'light' : 'dark'">{{title}}</a>
-<!--    <router-link :to="'/article/'+id">{{title}}</router-link>-->
     <div class="sub-title">
       <p><i class="el-icon-date"></i>{{date}}</p>
       <p><i class="el-icon-document"></i>{{wordNum}}字</p>
