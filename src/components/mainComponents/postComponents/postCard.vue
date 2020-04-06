@@ -1,7 +1,7 @@
 <template>
   <main>
     <div v-for="item in postlist" :key="item.title" class="post-box spacial">
-      <div v-if="item.id >(pageValue-1)*pageSize && item.id <=pageValue*pageSize">
+      <div v-if="pageValue ==1 ? true : item.id >(pageValue-1)*pageSize && item.id <=pageValue*pageSize">
         <div class="post-card" :class="icon ? 'light' : 'dark'">
           <post-header
             :icon="icon"

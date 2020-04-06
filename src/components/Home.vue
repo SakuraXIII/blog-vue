@@ -63,6 +63,9 @@ export default {
     readSession: function () {
       let light = window.sessionStorage.getItem('light')
       this.icon = JSON.parse(light)
+      let color = window.sessionStorage.getItem('color')
+      color = color.split(/rgb\(|\)/)[1]
+      document.documentElement.style = '--defaultColor:' + color + ';'
     },
 
     toggle: function () {

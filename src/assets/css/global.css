@@ -38,8 +38,10 @@ ul, li, ol {
 
 .light,.light:hover,.light:focus  {
   --ligthbgColor: #ffffff;
-  color: #666;
-  border: 1px solid var(--ligthbgColor);
-  background-color: var(--ligthbgColor);
+  color: #ffffff;
+  /*border: 1px solid var(--ligthbgColor);*/
+  /*background-color: var(--ligthbgColor);*/
+  border: 1px solid rgb(var(--defaultColor));
+  background-color: rgb(var(--defaultColor));
   transition: all .5s ease-out;
 }

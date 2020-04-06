@@ -39,7 +39,9 @@ export default {
     // 加载时首先读取session，载入之前存储的信息
     readSession: function () {
       let value = window.sessionStorage.getItem('borRadius')
+      let color = window.sessionStorage.getItem('color')
       this.value = parseInt(value)
+      this.color = color || 'rgb(50, 47, 59)'
     },
     borderChange: function (borderValue) {
       this.tooltip = true
@@ -51,9 +53,9 @@ export default {
       window.sessionStorage.setItem('borRadius', this.value)
     },
     colorChange: function (colorValue) {
-      console.log(typeof colorValue)
       let color = colorValue.split(/rgb\(|\)/)[1] // 匹配rgb两边的括号并删除
       document.documentElement.style = '--defaultColor:' + color + ';'
+      window.sessionStorage.setItem('color', colorValue)
     }
   }
 }
@@ -65,5 +67,14 @@ export default {
 }
   .colorPicker {
     z-index: 2300 !important;
+  }
+
+  .block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    div.el-slider {
+      width: 85%;
+    }
   }
 </style>
