@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="theme-bg"></div>
-    <el-container direction="vertical" :style="{'--borRadius':this.$root.borRadius}">
+    <el-container direction="vertical">
       <div class="blog-header">
         <div class="pc-navbar">
           <el-header>
@@ -25,11 +25,11 @@
         <!--文章列表-->
         <div class="post-list">
           <post-card :postlist="post" :icon="icon"></post-card>
+          <my-footer :icon="icon"/>
         </div>
       </div>
-      <div class="blog-footer">
+      <div class="blog-tool">
         <!--页脚-->
-        <my-footer/>
         <!--侧边栏小工具-->
         <tools @toggle="icon = !icon" :icon="icon"/>
       </div>
@@ -124,7 +124,7 @@ export default {
         position: fixed;
         top: 0;
         z-index: 100;
-        background-color: rgba(50, 47, 59, 0.93);
+        background-color: var(--defaultColor);
         width: 100%;
       }
 
@@ -134,7 +134,6 @@ export default {
       }
     }
 
-    --borRadius: 0px; //作为页面卡片统一圆角
 
     /*中间文章部分*/
 
@@ -144,6 +143,10 @@ export default {
 
       .post-list {
         overflow: hidden;
+        // 样式穿透到下一级的分页组件
+        /deep/ .el-pagination {
+          text-align: center;
+        }
       }
 
       /*侧边栏部分*/

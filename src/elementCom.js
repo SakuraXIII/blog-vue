@@ -16,6 +16,7 @@ import {
   Avatar,
   Popover,
   Slider,
+  Pagination,
   Message
 } from 'element-ui'
 const element = {
@@ -37,6 +38,7 @@ const element = {
     Vue.use(Avatar)
     Vue.use(Popover)
     Vue.use(Slider)
+    Vue.use(Pagination)
     Vue.prototype.$message = Message
   }
 }

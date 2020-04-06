@@ -26,7 +26,7 @@ export default {
   methods: {
     borderAdjust: function (value) {
       this.tooltip = true
-      this.$root.borRadius = value + 'px'
+      document.body.style = `--borRadius:${value}px`
     },
     closeTip: function (value) {
       this.tooltip = false

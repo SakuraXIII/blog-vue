@@ -41,7 +41,7 @@ export default {
   .el-popper {
     transform: translateX(2%);
     z-index: 2200 !important;
-
+    border-radius: var(--borRadius);
     & > div.popper__arrow {
       display: none;
     }
