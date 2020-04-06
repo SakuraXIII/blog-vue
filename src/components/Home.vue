@@ -24,7 +24,6 @@
         </el-aside>
         <!--文章列表-->
         <div class="post-list">
-<!--          <post-card :postlist="post" :icon="icon"></post-card>-->
           <router-view :postlist="post" :icon="icon"></router-view>
           <my-footer :icon="icon"/>
         </div>
@@ -38,7 +37,6 @@
   </div>
 </template>
 <script>
-import PostCard from './mainComponents/postComponents/postCard'
 import NavBar from './headComponents/navBarComponents/navBar'
 import SiteName from './headComponents/siteName'
 import BlogInfo from './mainComponents/AsideComponents/asideBlogInfo'
@@ -49,7 +47,7 @@ import Tools from './footerComponents/tools'
 
 export default {
   name: 'Home',
-  components: {Tools, MyFooter, MobileDrawer, MyInfo, BlogInfo, SiteName, NavBar, PostCard},
+  components: {Tools, MyFooter, MobileDrawer, MyInfo, BlogInfo, SiteName, NavBar},
 
   data () {
     return {

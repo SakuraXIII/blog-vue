@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import ToolSetting from './settingComponents/toolSetting'
+import ToolSetting from './settingComponents/popper'
 export default {
   name: 'my-setting',
   components: {ToolSetting},

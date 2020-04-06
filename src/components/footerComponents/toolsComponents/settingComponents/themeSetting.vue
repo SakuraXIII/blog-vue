@@ -8,7 +8,7 @@
         :min="0" :max="30"
         tooltip-class="borderTip"
         :show-tooltip="tooltip"
-        @input="borderAdjust"
+        @input="borderChange"
         @change="closeTip"></el-slider>
     </div>
     <div class="block">
@@ -16,6 +16,7 @@
       <el-color-picker
         popper-class="colorPicker"
         color-format="rgb"
+        @active-change="colorChange"
         v-model="color"></el-color-picker>
     </div>
   </div>
@@ -40,14 +41,19 @@ export default {
       let value = window.sessionStorage.getItem('borRadius')
       this.value = parseInt(value)
     },
-    borderAdjust: function (value) {
+    borderChange: function (borderValue) {
       this.tooltip = true
-      document.body.style = `--borRadius:${value}px`
+      document.body.style = `--borRadius:${borderValue}px`
     },
     closeTip: function (value) {
       this.tooltip = false
       // 写入session，存储数据
       window.sessionStorage.setItem('borRadius', this.value)
+    },
+    colorChange: function (colorValue) {
+      console.log(typeof colorValue)
+      let color = colorValue.split(/rgb\(|\)/)[1] // 匹配rgb两边的括号并删除
+      document.documentElement.style = '--defaultColor:' + color + ';'
     }
   }
 }
