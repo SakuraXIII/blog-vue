@@ -57,11 +57,11 @@ export default {
 
 <style lang="less" scoped>
   .post-box {
-    margin-bottom: 2vw;
 
     .post-card {
       padding: 30px;
       border-radius: var(--borRadius);
+      margin-bottom: 2vw;
 
       .loading {
         text-align: center;

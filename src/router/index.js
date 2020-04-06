@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Login from '../components/Login'
 import Home from '../components/Home'
 import postDetail from '../components/mainComponents/postComponents/postDetail'
+import postCard from '../components/mainComponents/postComponents/postCard'
 
 Vue.use(Router)
 
@@ -10,6 +11,7 @@ export default new Router({
   mode: 'history',
   routes: [
     {
+      name: 'login',
       path: '/login',
       component: Login
     },
@@ -22,6 +24,11 @@ export default new Router({
           name: 'postDetail',
           path: '/article/:id',
           component: postDetail
+        },
+        {
+          name: 'postList',
+          path: '/',
+          component: postCard
         }
       ]
     }

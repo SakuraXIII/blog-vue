@@ -1,19 +1,69 @@
 <template>
-  <div>
-<p>hhhhhhhhhh</p>
-  </div>
+  <main>
+    <div v-for="item in postlist" :key="item.title" class="post-box spacial">
+      <div v-if="item.id == articalId">
+        <div class="post-card" :class="icon ? 'light' : 'dark'">
+          <post-header
+            :icon="icon"
+            :title="item.title"
+            :date="item.date"
+            :id="item.id"
+            :wordNum="item.article ? item.article.length : ''"
+            :read-time="item.time"
+            :tags="'折腾'"
+            v-if="postlist !== '正在加载中'"
+          />
+          <p v-else class="loading">(。・∀・)ノ)数据好像还没收到，等一下吧 <i class="el-icon-loading"></i></p>
+          <div class="text">
+            {{ item.article }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </template>
 
 <script>
+import PostHeader from './postHeader'
+
 export default {
-  name: 'post-detail',
+  name: 'post-card',
+  components: {PostHeader},
+  props: ['postlist', 'icon'],
   data () {
-    return {}
+    return {
+      articalId: null
+    }
   },
-  methods: {}
+  created () {
+    this.articalIndex()
+  },
+  methods: {
+    articalIndex: function () {
+      console.log(this.$route.params.id)
+      this.articalId = this.$route.params.id
+    }
+  }
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+  .post-box {
 
+    .post-card {
+      padding: 30px;
+      border-radius: var(--borRadius);
+      margin-bottom: 2vw;
+
+      .loading {
+        text-align: center;
+      }
+
+      .text {
+        margin-top: 1vw;
+        text-indent: 2em;
+        line-height: 1.5em;
+      }
+    }
+  }
 </style>

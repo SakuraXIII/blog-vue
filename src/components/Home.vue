@@ -24,8 +24,8 @@
         </el-aside>
         <!--文章列表-->
         <div class="post-list">
-          <post-card :postlist="post" :icon="icon"></post-card>
-          <router-view name="postDetail"></router-view>
+<!--          <post-card :postlist="post" :icon="icon"></post-card>-->
+          <router-view :postlist="post" :icon="icon"></router-view>
           <my-footer :icon="icon"/>
         </div>
       </div>
