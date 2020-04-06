@@ -48,10 +48,13 @@ export default {
   text-align: center;
   margin: 20px 0;
   border-radius: var(--borRadius);
-  border: 1px solid var(--defaultColor);
-  background-color: var(--defaultColor);
+  &:not(.dark) {
+    border: 1px solid rgba(var(--defaultColor));
+    background-color: rgba(var(--defaultColor));
+  }
   a {
     border: none;
+    color: steelblue;
     background-color: transparent;
   }
 }

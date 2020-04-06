@@ -25,13 +25,14 @@
         <!--文章列表-->
         <div class="post-list">
           <post-card :postlist="post" :icon="icon"></post-card>
+          <router-view name="postDetail"></router-view>
           <my-footer :icon="icon"/>
         </div>
       </div>
       <div class="blog-tool">
         <!--页脚-->
         <!--侧边栏小工具-->
-        <tools @toggle="icon = !icon" :icon="icon"/>
+        <tools @toggle="toggle" :icon="icon"/>
       </div>
     </el-container>
   </div>
@@ -57,9 +58,20 @@ export default {
     }
   },
   created () {
+    this.readSession()
     this.getBlogList()
   },
   methods: {
+    readSession: function () {
+      let light = window.sessionStorage.getItem('light')
+      this.icon = JSON.parse(light)
+    },
+
+    toggle: function () {
+      this.icon = !this.icon
+      window.sessionStorage.setItem('light', this.icon)
+    },
+
     async getBlogList () {
       let {data: res} = await this.$axios.post('loadBlog', {id: '1'})
       res = res.data
@@ -124,7 +136,7 @@ export default {
         position: fixed;
         top: 0;
         z-index: 100;
-        background-color: var(--defaultColor);
+        background-color: rgba(var(--defaultColor), 0.8);
         width: 100%;
       }
 
@@ -133,7 +145,6 @@ export default {
         padding-top: 60px;
       }
     }
-
 
     /*中间文章部分*/
 

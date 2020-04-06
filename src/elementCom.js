@@ -17,6 +17,7 @@ import {
   Popover,
   Slider,
   Pagination,
+  ColorPicker,
   Message
 } from 'element-ui'
 const element = {
@@ -39,6 +40,7 @@ const element = {
     Vue.use(Popover)
     Vue.use(Slider)
     Vue.use(Pagination)
+    Vue.use(ColorPicker)
     Vue.prototype.$message = Message
   }
 }

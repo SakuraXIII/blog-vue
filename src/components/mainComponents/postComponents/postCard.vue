@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div v-for="item in postlist" :key="item.id" class="post-box spacial">
+    <div v-for="item in postlist" :key="item.title" class="post-box spacial">
       <div v-if="item.id >(pageValue-1)*pageSize && item.id <=pageValue*pageSize">
         <div class="post-card" :class="icon ? 'light' : 'dark'">
           <post-header
@@ -48,6 +48,7 @@ export default {
   methods: {
     changePage: function (pageValue) {
       console.log(pageValue)
+      document.querySelector('.el-backtop').click()
       this.pageValue = pageValue
     }
   }
