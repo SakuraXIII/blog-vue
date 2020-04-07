@@ -33,7 +33,6 @@ export default {
       this.key = this.key.trim()
       if (this.key !== '') {
         // TODO 搜索功能
-        this.$emit('search', this.key)
         console.log(this.key)
       }
     }

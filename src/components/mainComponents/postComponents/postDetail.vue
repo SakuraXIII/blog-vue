@@ -56,7 +56,7 @@ export default {
     postListSplit: function (value) {
       if (value === '正在加载中') return value
       return value.filter((item) => {
-        return item.id == this.articalId
+        return item.id === this.articalId
       })
     }
   }

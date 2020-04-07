@@ -17,12 +17,7 @@ export default {
   data () {
     return {}
   },
-  methods: {},
-  watch: {
-    '$route' (t0, from) {
-      console.log(to, '======', from)
-    }
-  }
+  methods: {}
 }
 </script>
 

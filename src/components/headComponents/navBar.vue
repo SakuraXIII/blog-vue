@@ -5,7 +5,7 @@
         <a :href="value.link">{{ value.name }}</a>
       </li>
     </ul>
-    <search-box @search="searchInput"/>
+    <search-box/>
   </div>
 </template>
 
@@ -24,11 +24,7 @@ export default {
       ]
     }
   },
-  methods: {
-    searchInput: function (searchKey) {
-      this.$emit('search', searchKey)
-    }
-  }
+  methods: {}
 }
 </script>
 

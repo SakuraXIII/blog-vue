@@ -5,7 +5,7 @@
       <div class="blog-header">
         <div class="pc-navbar">
           <el-header>
-            <nav-bar @search="searchInput" />
+            <nav-bar/>
           </el-header>
           <div class="null"></div>
         </div>
@@ -24,7 +24,7 @@
         </el-aside>
         <!--文章列表-->
         <div class="post-list">
-          <router-view :postlist="post" :icon="icon" :searchKey="searchKey"></router-view>
+          <router-view :postlist="post" :icon="icon"></router-view>
           <my-footer :icon="icon"/>
         </div>
       </div>
@@ -52,8 +52,7 @@ export default {
   data () {
     return {
       post: '正在加载中',
-      icon: true,
-      searchKey: ''
+      icon: true
     }
   },
   created () {
@@ -72,9 +71,6 @@ export default {
     toggle: function () {
       this.icon = !this.icon
       window.sessionStorage.setItem('light', this.icon)
-    },
-    searchInput: function (searchKey) {
-      this.searchKey = searchKey
     },
 
     async getBlogList () {

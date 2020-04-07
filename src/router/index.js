@@ -11,22 +11,18 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      name: 'login',
       path: '/login',
       component: Login
     },
     {
-      name: 'home',
       path: '/',
       component: Home,
       children: [
         {
-          name: 'postDetail',
           path: '/article/:id',
           component: postDetail
         },
         {
-          name: 'postList',
           path: '/',
           component: postCard
         }
