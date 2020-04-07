@@ -22,10 +22,12 @@
       <a
         :href="'/article/'+postlist[articalId-2].id"
         v-if="postlist[articalId-2]"
+        class="prev"
         :class="icon ? 'light' : 'dark'"><i class="el-icon-back"></i>上一篇 {{postlist[articalId-2].title}}</a>
       <a
         :href="'/article/'+postlist[articalId].id"
         v-if="postlist[articalId]"
+        class="next"
         :class="icon ? 'light' : 'dark'">下一篇 {{postlist[articalId].title}}<i class="el-icon-right"></i></a>
     </div>
   </main>
@@ -85,7 +87,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+text-align: right;
     a {
       padding: 10px;
       &:hover {

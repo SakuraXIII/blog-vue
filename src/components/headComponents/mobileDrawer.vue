@@ -34,7 +34,6 @@ export default {
   }
 }
 </script>
-<!--自定义的类名必须要取消<style>的scoped属性才能生效-->
 <style lang="less" scoped>
   .menu {
     position: fixed;

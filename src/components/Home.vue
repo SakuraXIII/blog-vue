@@ -5,7 +5,7 @@
       <div class="blog-header">
         <div class="pc-navbar">
           <el-header>
-            <nav-bar/>
+            <nav-bar @search="searchInput" />
           </el-header>
           <div class="null"></div>
         </div>
@@ -24,7 +24,7 @@
         </el-aside>
         <!--文章列表-->
         <div class="post-list">
-          <router-view :postlist="post" :icon="icon"></router-view>
+          <router-view :postlist="post" :icon="icon" :searchKey="searchKey"></router-view>
           <my-footer :icon="icon"/>
         </div>
       </div>
@@ -37,11 +37,11 @@
   </div>
 </template>
 <script>
-import NavBar from './headComponents/navBarComponents/navBar'
+import NavBar from './headComponents/navBar'
 import SiteName from './headComponents/siteName'
 import BlogInfo from './mainComponents/AsideComponents/asideBlogInfo'
 import MyInfo from './mainComponents/AsideComponents/asideMyInfo'
-import MobileDrawer from './headComponents/navBarComponents/mobileDrawer'
+import MobileDrawer from './headComponents/mobileDrawer'
 import MyFooter from './footerComponents/footer'
 import Tools from './footerComponents/tools'
 
@@ -52,7 +52,8 @@ export default {
   data () {
     return {
       post: '正在加载中',
-      icon: true
+      icon: true,
+      searchKey: ''
     }
   },
   created () {
@@ -64,13 +65,16 @@ export default {
       let light = window.sessionStorage.getItem('light')
       this.icon = JSON.parse(light)
       let color = window.sessionStorage.getItem('color')
-      color = color.split(/rgb\(|\)/)[1]
+      color = color ? color.split(/rgb\(|\)/)[1] : '50, 47, 59'
       document.documentElement.style = '--defaultColor:' + color + ';'
     },
 
     toggle: function () {
       this.icon = !this.icon
       window.sessionStorage.setItem('light', this.icon)
+    },
+    searchInput: function (searchKey) {
+      this.searchKey = searchKey
     },
 
     async getBlogList () {

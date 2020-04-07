@@ -5,12 +5,12 @@
         <a :href="value.link">{{ value.name }}</a>
       </li>
     </ul>
-    <search-box/>
+    <search-box @search="searchInput"/>
   </div>
 </template>
 
 <script>
-import SearchBox from '../searchBox'
+import SearchBox from './navBarComponents/searchBox'
 
 export default {
   name: 'nav-bar',
@@ -24,7 +24,11 @@ export default {
       ]
     }
   },
-  methods: {}
+  methods: {
+    searchInput: function (searchKey) {
+      this.$emit('search', searchKey)
+    }
+  }
 }
 </script>
 
@@ -55,6 +59,5 @@ export default {
         }
       }
     }
-
   }
 </style>
