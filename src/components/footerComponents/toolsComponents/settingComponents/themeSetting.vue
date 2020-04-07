@@ -43,7 +43,7 @@ export default {
       let value = window.sessionStorage.getItem('borRadius')
       let color = window.sessionStorage.getItem('color')
       this.value = parseInt(value)
-      this.color = color || 'rgb(50, 47, 59)'
+      this.color = color || 'rgb(51, 147, 125)'
     },
     borderChange: function (borderValue) {
       this.tooltip = true

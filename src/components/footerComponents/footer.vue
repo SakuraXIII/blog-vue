@@ -2,7 +2,7 @@
   <div class="spacial my-footer" :class="icon ? 'light' : 'dark'">
     <p>CopyRight &copy; 2020 wise's blog</p>
     <p>本站已勉强运行{{runtime}}</p>
-    <p>Theme by <a href="https://gitee.com/hbbxht/blog-vue" :class="icon ? 'light' : 'dark'">Sakura</a></p>
+    <p>Theme by <a href="https://gitee.com/hbbxht/blog-vue" :class="icon ? 'light' : 'dark'" title="Sakura">Sakura</a></p>
   </div>
 </template>
 

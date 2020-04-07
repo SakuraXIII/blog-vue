@@ -45,7 +45,6 @@ export default {
   props: ['postlist', 'icon'],
   methods: {
     changePage: function (pageValue) {
-      console.log(pageValue)
       document.querySelector('.el-backtop').click()
       this.pageValue = pageValue
     },

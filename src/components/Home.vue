@@ -17,10 +17,9 @@
       </div>
       <div class="post-main">
         <!--侧边栏-->
-        <el-aside class="spacial" :class="icon ? 'light' : 'dark'">
-          aside
-          <!--          <blog-info/>-->
-          <!--          <my-info/>-->
+        <el-aside class="spacial" width="18vw" :class="icon ? 'light' : 'dark'">
+          <blog-info/>
+          <my-info/>
         </el-aside>
         <!--文章列表-->
         <div class="post-list">
@@ -64,7 +63,7 @@ export default {
       let light = window.sessionStorage.getItem('light')
       this.icon = JSON.parse(light)
       let color = window.sessionStorage.getItem('color')
-      color = color ? color.split(/rgb\(|\)/)[1] : '50, 47, 59'
+      color = color ? color.split(/rgb\(|\)/)[1] : '51, 147, 125'
       document.documentElement.style = '--defaultColor:' + color + ';'
     },
 
