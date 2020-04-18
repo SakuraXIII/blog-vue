@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="theme-bg"></div>
+    <my-canvas/>
     <el-container direction="vertical">
       <div class="blog-header">
         <div class="pc-navbar">
@@ -43,10 +44,11 @@ import MyInfo from './mainComponents/AsideComponents/asideMyInfo'
 import MobileDrawer from './headComponents/mobileDrawer'
 import MyFooter from './footerComponents/footer'
 import Tools from './footerComponents/tools'
+import MyCanvas from './mainComponents/AsideComponents/canvas'
 
 export default {
   name: 'Home',
-  components: {Tools, MyFooter, MobileDrawer, MyInfo, BlogInfo, SiteName, NavBar},
+  components: {MyCanvas, Tools, MyFooter, MobileDrawer, MyInfo, BlogInfo, SiteName, NavBar},
 
   data () {
     return {
@@ -61,7 +63,7 @@ export default {
   methods: {
     readSession: function () {
       let light = window.sessionStorage.getItem('light')
-      this.icon = JSON.parse(light)
+      this.icon = light === null ? true : JSON.parse(light)
       let color = window.sessionStorage.getItem('color')
       color = color ? color.split(/rgb\(|\)/)[1] : '51, 147, 125'
       document.documentElement.style = '--defaultColor:' + color + ';'
@@ -168,6 +170,7 @@ export default {
         float: left;
         margin: 0 5vw;
         border-radius: var(--borRadius);
+        overflow: hidden;
       }
     }
   }
